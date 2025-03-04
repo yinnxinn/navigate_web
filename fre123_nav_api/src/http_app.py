@@ -8,6 +8,8 @@
 import requests
 
 from flask import Flask
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/..")
 
 from src.config import LOGGER, Config
 from src.views import bp_api

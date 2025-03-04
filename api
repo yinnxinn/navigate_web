@@ -1,0 +1,15 @@
+curl 'https://umami.metaso.site/api/send' \
+  -H 'accept: */*' \
+  -H 'accept-language: zh-CN,zh;q=0.9' \
+  -H 'content-type: application/json' \
+  -H 'origin: https://fre123.com' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://fre123.com/' \
+  -H 'sec-ch-ua: "Not A(Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36' \
+  --data-raw '{"type":"event","payload":{"website":"9a9d2e67-f13a-49ea-a0c6-494e8dc77572","hostname":"fre123.com","screen":"1920x1080","language":"zh-CN","title":"FRE123%20%E5%85%8D%E8%B4%B9%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E5%B9%B3%E5%8F%B0","url":"/"}}'

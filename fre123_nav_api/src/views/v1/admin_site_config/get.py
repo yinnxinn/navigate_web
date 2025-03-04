@@ -45,7 +45,7 @@ def admin_site_config_get():
         group_doc_data = group_doc_info[0] if group_doc_info else {}
         result = {
             **UniResponse.SUCCESS,
-            ResponseField.DATA: group_doc_data.get("config", {}),
+            ResponseField.DATA: group_doc_data.get("config", {})[0].get('list', [{}])[0],
         }
     else:
         result = {

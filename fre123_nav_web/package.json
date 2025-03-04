@@ -21,12 +21,13 @@
     "@fortawesome/free-solid-svg-icons": "5.15.4",
     "@fortawesome/vue-fontawesome": "3.0.5",
     "@nuxtjs/tailwindcss": "6.10.1",
-    "@pinia/nuxt": "0.4.11",
+    "@pinia-plugin-persistedstate/nuxt": "1.2.0",
+    "@pinia/nuxt": "^0.10.1",
     "@vueuse/core": "10.7.0",
     "@vueuse/nuxt": "10.7.0",
     "nuxt-icon": "0.6.7",
     "ohmyfetch": "0.4.21",
-    "@pinia-plugin-persistedstate/nuxt": "1.2.0",
+    "pinia": "^3.0.1",
     "yarn": "1.22.21"
   }
 }

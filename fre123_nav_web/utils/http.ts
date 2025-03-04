@@ -2,8 +2,10 @@ import { $fetch, FetchOptions } from 'ohmyfetch'
 
 import type { Ref } from 'vue'
 
-const baseURL = import.meta.env.VITE_BASE_URL as string
-const backendHost = process.server ? process.env.NUXT_BACKEND_API : ''
+// const baseURL = import.meta.env.VITE_BASE_URL as string
+// const backendHost = process.server ? process.env.NUXT_BACKEND_API : ''
+const baseURL = 'http://127.0.0.1:8765' // 直接使用后端地址
+const backendHost = baseURL // 统一使用 baseURL
 const appId = process.server ? process.env.NUXT_APP_ID : ''
 const appToken = process.server ? process.env.NUXT_APP_TOKEN : ''
 
@@ -23,8 +25,8 @@ export const fetchInstance = $fetch.create({
   // @ts-ignore
   onResponse({ response, options }) {
     // 状态码正常则拆出 data 返回
-    // console.log('options is ', options)
-    // console.log('response is ', response._data)
+    console.log('options is ', options)
+    console.log('response is ', response._data)
     const parseData = JSON.parse(response._data)
     if (parseData.status === 0) {
       response._data = {
@@ -46,15 +48,16 @@ export const postApi = <T>(
     forceUpdate?: boolean
   } = {}
 ) => {
-  // console.log('body is ', options)
+  console.log('body is ', options)
   return useAsyncData(options?.key ?? url, () => {
     if (options?.forceUpdate === true) {
-      refreshNuxtData(options?.key ?? url)
+      refreshNuxtData(options?.key ?? url) 
     }
 
     return fetchInstance<T>(url, {
       method: 'POST',
-      baseURL: process.server ? backendHost : '/api',
+      // baseURL: process.server ? backendHost : '/api',
+      baseURL: backendHost,
       ...options,
       // @ts-ignore
       body: isRef(options?.body) ? options.body.value : options.body,

@@ -41,6 +41,7 @@ def config_get():
             site_res = mongodb_find(
                 coll_conn=site_coll, filter_dict={}, return_dict={"_id": 0}
             )
+            print(site_res)
             if not site_res["status"]:
                 continue_status = False
                 result = {

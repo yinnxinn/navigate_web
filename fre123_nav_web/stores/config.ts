@@ -34,5 +34,7 @@ export const getSiteConfigItem = async (key: string) => {
   if (siteConfig?.findLastIndex((item) => Object.keys(item)[0] === key) == -1) {
     return createError('无法获取配置信息')
   }
+
+  console.log('111111111', siteConfig?.find((item) => Object.keys(item)[0] === key)?.[key])
   return siteConfig?.find((item) => Object.keys(item)[0] === key)?.[key]
 }

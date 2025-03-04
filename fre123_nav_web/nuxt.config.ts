@@ -9,12 +9,15 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@pinia-plugin-persistedstate/nuxt',
   ],
+
   pinia: {
     autoImports: ['defineStore', 'storeToRefs'],
   },
+
   alias: {
     '@': path.resolve(__dirname, 'src'),
   },
+
   app: {
     head: {
       link: [
@@ -55,15 +58,18 @@ export default defineNuxtConfig({
         process.env.NODE_ENV === 'development' ? [] : ['console', 'debugger'],
     },
   },
+
   experimental: {
     writeEarlyHints: false,
     inlineSSRStyles: false,
   },
+
   css: [
     '~/assets/global.scss',
     '~/assets/tailwind.css',
     '@fortawesome/fontawesome-svg-core/styles.css',
   ],
+
   build: {
     transpile: [
       '@fortawesome/vue-fontawesome',
@@ -75,4 +81,5 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: process.env.NODE_ENV === 'development' ? true : false },
+  compatibilityDate: '2025-02-28',
 })

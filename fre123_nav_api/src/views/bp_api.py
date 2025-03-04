@@ -24,10 +24,11 @@ def add_route(api_version: str, api_path: str):
     """
 
     if "__" not in api_path and api_path.endswith("py"):
-        try:
-            api_path = api_path.replace(".py", "")
+        #try:
+        if 1:
+            api_path = api_path.replace(".py", "").replace('\\','/')
             route_path = api_path.split("views")[-1]
-            module_path = api_path.split("src")[-1].replace("/", ".")
+            module_path = api_path.split("src")[-1].replace("/", ".") .replace('\\','.')
             view_func = api_path.split(f"views/{api_version}/")[-1].replace("/", "_")
             action_module = import_module(f"src{module_path}")
             bp_api.add_url_rule(
@@ -35,8 +36,8 @@ def add_route(api_version: str, api_path: str):
                 view_func=getattr(action_module, view_func),
                 methods=["POST", "GET"],
             )
-        except Exception as e:
-            LOGGER.error(f"Adding the route {route_path} in Flask has failed. {e}")
+        # except Exception as e:
+        #     LOGGER.error(f"Adding the route {route_path} in Flask has failed. {e}")
 
 
 for each_version in os.listdir(Config.API_DIR):

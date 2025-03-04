@@ -12,6 +12,8 @@ import logo from '~~/assets/img/logo.ico'
 const seoInfo = await getSiteConfigItem(CONFIG_KEY_SEO)
 // 初始化 SEO_TITLE 模板和主题
 
+console.log('seoInfo', seoInfo)
+
 const scripts: any[] = []
 console.log('seoinfo ', seoInfo)
 if (seoInfo?.statistics_baidu) {

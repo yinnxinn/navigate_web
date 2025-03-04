@@ -15,7 +15,7 @@ class Config:
     """
 
     # Application config
-    DEBUG = True
+    DEBUG = False
     TIMEZONE = "Asia/Shanghai"
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
     ROOT_DIR = os.path.join(os.path.dirname(BASE_DIR))
@@ -28,8 +28,8 @@ class Config:
     APP_ID_CONFIG = {"fre123": os.getenv("APP_TOKEN", "123456")}
 
     MONGODB_CONFIG = {
-        "mongodb_uri": os.getenv("MONGODB_URI", ""),
-        "operate_db": os.getenv("MONGODB_DB", ""),
+        "mongodb_uri": os.getenv("MONGODB_URI", "mongodb://localhost:27017/,"),
+        "operate_db": os.getenv("MONGODB_DB", "DB"),
     }
 
     REDIS_CONFIG = {
